@@ -9,7 +9,6 @@ function App() {
   const [nextPageUrl, setNextPageUrl] = useState("https://dragonball-api.com/api/characters?limit=20");
   const [isLoading, setIsLoading] = useState(false);
 
-  // Função para buscar personagens
   const fetchCharacters = async (url) => {
     try {
       setIsLoading(true);
@@ -17,7 +16,6 @@ function App() {
       const data = await res.json();
       const newCharacters = data.items || data;
 
-      // Remover duplicados com base no ID
       setCharacters((prev) => {
         const existingIds = new Set(prev.map((char) => char.id));
         const uniqueNew = newCharacters.filter((char) => !existingIds.has(char.id));
@@ -38,13 +36,11 @@ function App() {
     }
   };
 
-  // Carrega primeira página
   useEffect(() => {
     fetchCharacters(nextPageUrl);
     // eslint-disable-next-line
   }, []);
 
-  // Aplica filtros
   useEffect(() => {
     const filtered = characters.filter((char) => {
       const raceMatch = raceFilter ? char.race?.toLowerCase().includes(raceFilter.toLowerCase()) : true;
@@ -71,6 +67,18 @@ function App() {
           <option value="Male">Masculino</option>
           <option value="Female">Feminino</option>
         </select>
+
+        {(raceFilter || genderFilter) && (
+          <button
+            className="clear-filters"
+            onClick={() => {
+              setRaceFilter("");
+              setGenderFilter("");
+            }}
+          >
+            Mostrar todos
+          </button>
+        )}
       </div>
 
       <div className="card-container">

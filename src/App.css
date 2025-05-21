@@ -57,3 +57,19 @@
 .load-more:hover {
   background-color: #ffb700;
 }
+
+.clear-filters {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #00c853;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.clear-filters:hover {
+  background-color: #00b342;
+}
+
