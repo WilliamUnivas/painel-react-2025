@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./App.css";
 
 function App() {
@@ -12,8 +13,8 @@ function App() {
   const fetchCharacters = async (url) => {
     try {
       setIsLoading(true);
-      const res = await fetch(url);
-      const data = await res.json();
+      const response = await axios.get(url);
+      const data = response.data;
       const newCharacters = data.items || data;
 
       setCharacters((prev) => {
