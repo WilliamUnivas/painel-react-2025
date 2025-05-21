@@ -1,42 +1,59 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.App {
   text-align: center;
+  padding: 20px;
+  background-color: #504e4e;
+  font-family: sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.filters {
+  margin-bottom: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.filters input,
+.filters select {
+  margin: 0 10px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 10px;
 }
 
 .card {
-  padding: 2em;
+  background: rgb(222, 22, 22);
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s;
 }
 
-.read-the-docs {
-  color: #888;
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.load-more {
+  margin: 30px auto;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.load-more:hover {
+  background-color: #ffb700;
 }
