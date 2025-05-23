@@ -1,6 +1,3 @@
-"use client"
-
-// Importando os hooks necessários do React e a biblioteca axios
 import { useEffect, useState, useRef, useCallback } from "react"
 import axios from "axios"
 import "./App.css"
@@ -380,6 +377,7 @@ function App() {
                     <strong>Raça:</strong> {char.race || "Desconhecida"}
                   </p>
 
+                  
                   {/* Gênero do personagem */}
                   <p>
                     <strong>Gênero:</strong> {char.gender || "Desconhecido"}
